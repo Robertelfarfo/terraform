@@ -5,7 +5,7 @@ module "bastion_sg" {
 
     vpc_id = module.vpc.vpc_id
     ingress_cidr_blocks = ["18.206.107.24/29"]
-    ingress_rules = ["ssh-tcp"]
+    ingress_rules = ["ssh-tcp" , "http-80-tcp"]
 
     # Egress Rule - all-all open
     egress_rules = ["all-all"]

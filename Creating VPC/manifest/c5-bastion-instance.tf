@@ -6,7 +6,7 @@ module "ec2_instance" {
     ami = data.aws_ami.amazonlin2.id
 
     iam_instance_profile = aws_iam_role.ec2_read_secrets.name
-    user_data = file("${path.module}/init.sh")
+    user_data = "${file("init.sh")}"
 
     instance_type = "t2.micro"
     key_name = "EC2 Tutorial"
